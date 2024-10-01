@@ -50,6 +50,7 @@ def main():
         optimizer.step()
         if (epoch+1) % 20 == 0:
             print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+    torch.save(model.state_dict(), 'lstm_model.pth')
 
     # Prediction
     model.eval()

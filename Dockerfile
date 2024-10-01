@@ -1,17 +1,11 @@
-# Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
-# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
-RUN pip install torch pandas numpy matplotlib
+RUN pip install torch pandas numpy matplotlib flask
 
-# Make port 80 available to the world outside this container (if needed)
-EXPOSE 80
+EXPOSE 5000
 
-# Run main.py when the container launches
-CMD ["python", "main.py"]
+CMD ["python", "app.py"]
